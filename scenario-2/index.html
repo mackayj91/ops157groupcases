@@ -1,1 +1,150 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NextGen Devices - Mass Produced Technology Scenario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h2 { color: #1a4d2e; margin-top: 40px; }
+        #map { height: 400px; margin-bottom: 40px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table, th, td { border: 1px solid #ccc; }
+        th, td { padding: 8px; text-align: left; }
+        tr:hover { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>NextGen Devices - Mass Produced Technology Scenario</h1>
+    <p>NextGen Devices is a startup producing ethically sourced smartphones and wearables, facing challenges scaling manufacturing and distribution while maintaining quality and sustainability in a competitive tech landscape.</p>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var map = L.map('map').setView([20, 0], 2);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data © OpenStreetMap contributors'
+            }).addTo(map);
+
+            var locations = [
+                { coords: [37.7749, -122.4194], name: "HQ (San Francisco, USA)" },
+                { coords: [22.3193, 114.1694], name: "PCB Supplier (Hong Kong)" },
+                { coords: [23.1291, 113.2644], name: "Assembly Plant (Guangzhou, China)" },
+                { coords: [35.6762, 139.6503], name: "Component Supplier (Tokyo, Japan)" },
+                { coords: [12.9716, 77.5946], name: "Software Team (Bangalore, India)" },
+                { coords: [51.5074, -0.1278], name: "Key Market (UK)" },
+                { coords: [48.8566, 2.3522], name: "Key Market (France)" },
+                { coords: [40.7128, -74.0060], name: "Key Market (USA - East Coast)" }
+            ];
+
+            locations.forEach(function(loc) {
+                L.marker(loc.coords).addTo(map).bindPopup(loc.name);
+            });
+        });
+    </script>
+
+    <!-- SECTION 1: Supply Chain Challenge Strategist -->
+    <h2>1. Challenges</h2>
+    <p>NextGen Devices struggles with securing stable supplies of rare earth minerals required for advanced batteries and screens due to global shortages and geopolitical tensions, impacting production planning and increasing costs.</p>
+    <p>High demand fluctuations in the consumer tech market, driven by seasonality and fast product cycles, create challenges in forecasting and inventory management across the supply chain.</p>
+    <p>Regulatory compliance for e-waste and environmental standards in different markets adds complexity to logistics and reverse logistics operations, requiring robust tracking and reporting systems.</p>
+    <p>Dependence on overseas assembly and long lead times expose the supply chain to disruptions from shipping delays, pandemics, and regional lockdowns, impacting the ability to meet launch schedules.</p>
+    <table>
+        <tr><th>Challenge</th><th>Impact</th></tr>
+        <tr><td>Rare earth shortages</td><td>Production constraints</td></tr>
+        <tr><td>Demand volatility</td><td>Inventory challenges</td></tr>
+        <tr><td>Regulatory compliance</td><td>Increased complexity</td></tr>
+        <tr><td>Lead time risks</td><td>Launch delays</td></tr>
+    </table>
+
+    <!-- SECTION 2: Supply Chain Competitive Strategist -->
+    <h2>2. Competition</h2>
+    <p>NextGen competes with established tech giants that leverage economies of scale, advanced automation, and supplier networks to lower costs, placing price pressure on NextGen's products.</p>
+    <p>Competitors with vertically integrated supply chains can innovate and bring new models to market quickly, whereas NextGen’s reliance on external suppliers slows responsiveness.</p>
+    <p>Large competitors invest heavily in supply chain digitisation, using AI and predictive analytics for demand planning, which NextGen currently lacks due to limited capital.</p>
+    <p>Customer expectations for rapid delivery and seamless after-sales service are challenging for NextGen, which is still developing its logistics and service infrastructure in global markets.</p>
+    <table>
+        <tr><th>Competitor Advantage</th><th>NextGen Position</th></tr>
+        <tr><td>Scale & automation</td><td>Higher unit costs</td></tr>
+        <tr><td>Vertical integration</td><td>Dependent on suppliers</td></tr>
+        <tr><td>Advanced digitisation</td><td>Limited digital tools</td></tr>
+        <tr><td>Established logistics</td><td>Developing infrastructure</td></tr>
+    </table>
+
+    <!-- SECTION 3: Service and Quality Designer -->
+    <h2>3. Service and Quality</h2>
+    <p>NextGen emphasises product durability and ethical sourcing as part of its quality promise but faces challenges in ensuring consistent component quality across multiple suppliers.</p>
+    <p>After-sales service response times are slow due to limited local service centres, affecting customer satisfaction, especially in Europe and the USA.</p>
+    <p>Product recalls from minor defects have occurred due to inconsistent assembly practices, highlighting gaps in quality control at overseas facilities.</p>
+    <p>Limited customer feedback integration into design and service processes reduces NextGen's agility in addressing recurring issues and improving future product iterations.</p>
+    <table>
+        <tr><th>Service/Quality Issue</th><th>Impact</th></tr>
+        <tr><td>Component variability</td><td>Defect risks</td></tr>
+        <tr><td>Slow after-sales service</td><td>Customer dissatisfaction</td></tr>
+        <tr><td>Assembly inconsistencies</td><td>Recalls</td></tr>
+        <tr><td>Poor feedback loops</td><td>Slow improvements</td></tr>
+    </table>
+
+    <!-- SECTION 4: Sustainability Designer -->
+    <h2>4. Sustainability</h2>
+    <p>NextGen aims to minimise e-waste by designing modular devices but struggles with supplier capabilities to meet modular design requirements consistently.</p>
+    <p>Carbon emissions from air freight for critical components to meet launch deadlines conflict with sustainability goals, creating tension between speed and environmental responsibility.</p>
+    <p>Ethical sourcing of minerals from conflict-free zones increases costs but is central to NextGen’s mission, challenging financial performance goals.</p>
+    <p>Limited local recycling partnerships reduce the company’s ability to collect and repurpose returned devices, affecting circular economy ambitions.</p>
+    <table>
+        <tr><th>Sustainability Issue</th><th>Impact</th></tr>
+        <tr><td>Supplier limitations</td><td>Design delays</td></tr>
+        <tr><td>Air freight emissions</td><td>Environmental impact</td></tr>
+        <tr><td>Ethical sourcing costs</td><td>Financial strain</td></tr>
+        <tr><td>Lack of recycling partners</td><td>Missed circularity</td></tr>
+    </table>
+
+    <!-- SECTION 5: Safety Designer -->
+    <h2>5. Safety</h2>
+    <p>Ensuring safe handling of lithium-ion batteries in logistics and warehousing is critical for NextGen, requiring specialised training and handling procedures.</p>
+    <p>Workplace safety standards at assembly sites vary, leading to potential risks for workers and the brand’s reputation.</p>
+    <p>Transportation routes through high-risk regions can expose shipments to theft and damage, requiring robust tracking and security protocols.</p>
+    <p>Return and recycling processes for devices with damaged batteries present fire risks if not handled correctly, demanding clear safety guidelines and training.</p>
+    <table>
+        <tr><th>Safety Concern</th><th>Impact</th></tr>
+        <tr><td>Battery handling</td><td>Fire hazards</td></tr>
+        <tr><td>Variable supplier safety</td><td>Worker risks</td></tr>
+        <tr><td>Transit security</td><td>Theft/damage</td></tr>
+        <tr><td>Returns safety</td><td>Recycling hazards</td></tr>
+    </table>
+
+    <!-- SECTION 6: Execution Lead -->
+    <h2>6. Execution</h2>
+    <p>Long component lead times, especially for chips and batteries, disrupt production schedules and market launch timing for NextGen.</p>
+    <p>Coordination across suppliers in different regions is challenging, leading to misaligned production and delivery schedules.</p>
+    <p>Limited warehouse space in key markets constrains the ability to hold buffer stock, increasing stockout risks during peak demand.</p>
+    <p>Reverse logistics for repairs and returns are underdeveloped, creating inefficiencies in processing and customer dissatisfaction.</p>
+    <table>
+        <tr><th>Execution Issue</th><th>Impact</th></tr>
+        <tr><td>Long lead times</td><td>Delayed launches</td></tr>
+        <tr><td>Poor coordination</td><td>Schedule misalignment</td></tr>
+        <tr><td>Limited warehousing</td><td>Stockouts</td></tr>
+        <tr><td>Inefficient reverse logistics</td><td>Delays, dissatisfaction</td></tr>
+    </table>
+
+    <!-- SECTION 7: People & Culture Analyst -->
+    <h2>7. People & Culture</h2>
+    <p>High turnover in production teams impacts operational stability and quality consistency.</p>
+    <p>Communication gaps between engineering, production, and logistics teams reduce responsiveness to issues.</p>
+    <p>Training for handling new product launches is inconsistent, leading to errors during ramp-up phases.</p>
+    <p>Alignment between sustainability goals and daily operations is limited, causing friction between management objectives and execution realities.</p>
+    <table>
+        <tr><th>People & Culture Issue</th><th>Impact</th></tr>
+        <tr><td>High turnover</td><td>Quality inconsistency</td></tr>
+        <tr><td>Poor communication</td><td>Issue delays</td></tr>
+        <tr><td>Inconsistent training</td><td>Ramp-up errors</td></tr>
+        <tr><td>Goal misalignment</td><td>Operational friction</td></tr>
+    </table>
+
+    <p style="font-size:small;">Map data © OpenStreetMap contributors | Scenario designed for OPS157 educational use.</p>
+</body>
+</html>
