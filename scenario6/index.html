@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coastal Regional TAFE NSW - Regional Education Scenario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h2 { color: #1a4d2e; margin-top: 40px; }
+        #map { height: 400px; margin-bottom: 40px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table, th, td { border: 1px solid #ccc; }
+        th, td { padding: 8px; text-align: left; }
+        tr:hover { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Coastal Regional TAFE NSW - Regional Education Scenario</h1>
+    <p>Coastal Regional TAFE NSW provides vocational education across regional communities, facing challenges in supply chain management for learning resources, service quality, workforce attraction, sustainability, and funding limitations. Students will analyse how regional education providers operate under these conditions.</p>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var map = L.map('map').setView([-33.8688, 151.2093], 6);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data © OpenStreetMap contributors'
+            }).addTo(map);
+
+            var locations = [
+                { coords: [-33.8688, 151.2093], name: "Sydney HQ (TAFE NSW)" },
+                { coords: [-32.9294, 151.7801], name: "Newcastle Campus" },
+                { coords: [-31.4273, 152.9087], name: "Port Macquarie Campus" },
+                { coords: [-28.6474, 153.6020], name: "Ballina Campus" },
+                { coords: [-33.4470, 151.4019], name: "Gosford Campus" },
+                { coords: [-34.9285, 138.6007], name: "Resource Printing Supplier (Adelaide)" },
+                { coords: [1.3521, 103.8198], name: "Online Learning Platform Support (Singapore)" }
+            ];
+
+            locations.forEach(function(loc) {
+                L.marker(loc.coords).addTo(map).bindPopup(loc.name);
+            });
+        });
+    </script>
+
+    <!-- SECTION 1: Supply Chain Challenge Strategist -->
+    <h2>1. Challenges</h2>
+    <p>Coastal Regional TAFE NSW faces challenges in delivering physical learning resources to regional campuses due to transport costs, supplier delays, and limited local printing capabilities.</p>
+    <p>Fluctuating student enrolments, especially in regional areas, create challenges in forecasting demand for resources and staff allocation across multiple campuses.</p>
+    <p>Limited access to high-speed internet in some regional areas impacts delivery of online learning, requiring alternative methods and contingency planning.</p>
+    <p>Public funding constraints limit flexibility in rapidly adapting resource procurement or campus facility upgrades in response to emerging student needs.</p>
+    <table>
+        <tr><th>Challenge</th><th>Impact</th></tr>
+        <tr><td>Transport & supply delays</td><td>Late resources</td></tr>
+        <tr><td>Fluctuating enrolments</td><td>Forecasting issues</td></tr>
+        <tr><td>Connectivity limitations</td><td>Online delivery issues</td></tr>
+        <tr><td>Funding constraints</td><td>Limited responsiveness</td></tr>
+    </table>
+
+    <!-- SECTION 2: Supply Chain Competitive Strategist -->
+    <h2>2. Competition</h2>
+    <p>TAFE NSW competes with private training providers and online platforms that can often offer flexible, on-demand learning solutions attractive to regional students.</p>
+    <p>Private providers can leverage digital platforms more effectively, reducing physical supply chain reliance, while TAFE NSW must manage both physical and digital delivery models.</p>
+    <p>Staff attraction in regional areas is competitive, with private providers and metropolitan institutions offering alternative employment options.</p>
+    <p>Community expectations for high-quality, relevant, and timely education increase pressure on TAFE NSW to align course offerings with regional employment needs efficiently.</p>
+    <table>
+        <tr><th>Competitive Factor</th><th>Impact on TAFE NSW</th></tr>
+        <tr><td>Digital platform agility</td><td>Competitive disadvantage</td></tr>
+        <tr><td>Flexible private offerings</td><td>Student attraction challenges</td></tr>
+        <tr><td>Workforce competition</td><td>Staffing challenges</td></tr>
+        <tr><td>Community expectations</td><td>Pressure on service</td></tr>
+    </table>
+
+    <!-- SECTION 3: Service and Quality Designer -->
+    <h2>3. Service and Quality</h2>
+    <p>Ensuring consistent quality of teaching across dispersed campuses is challenging due to variability in facilities, internet access, and resource availability.</p>
+    <p>Student feedback mechanisms vary across campuses, impacting the ability to address service issues systematically and efficiently.</p>
+    <p>Course content relevance to local employment markets requires ongoing curriculum updates and coordination with industry partners across regions.</p>
+    <p>Maintaining high standards in vocational training requires well-equipped facilities, skilled instructors, and up-to-date learning materials, which can be challenging under budget constraints.</p>
+    <table>
+        <tr><th>Service/Quality Issue</th><th>Impact</th></tr>
+        <tr><td>Facility variability</td><td>Inconsistent delivery</td></tr>
+        <tr><td>Feedback system gaps</td><td>Slow issue resolution</td></tr>
+        <tr><td>Curriculum relevance</td><td>Employability outcomes</td></tr>
+        <tr><td>Budget limitations</td><td>Resource constraints</td></tr>
+    </table>
+
+    <!-- SECTION 4: Sustainability Designer -->
+    <h2>4. Sustainability</h2>
+    <p>TAFE NSW aims to implement sustainable practices by reducing printing, increasing online delivery, and improving energy efficiency at campuses.</p>
+    <p>Regional transport of resources increases carbon emissions, requiring strategies to minimise delivery frequencies and use local suppliers where possible.</p>
+    <p>Electronic waste from IT equipment turnover at campuses requires responsible recycling and disposal to align with sustainability goals.</p>
+    <p>Balancing sustainability initiatives with maintaining equitable access to education in areas with limited digital connectivity requires innovative solutions.</p>
+    <table>
+        <tr><th>Sustainability Issue</th><th>Impact</th></tr>
+        <tr><td>Printing reduction goals</td><td>Resource adjustments</td></tr>
+        <tr><td>Transport emissions</td><td>Environmental footprint</td></tr>
+        <tr><td>E-waste management</td><td>Compliance needs</td></tr>
+        <tr><td>Access vs. sustainability</td><td>Goal conflicts</td></tr>
+    </table>
+
+    <!-- SECTION 5: Safety Designer -->
+    <h2>5. Safety</h2>
+    <p>Ensuring WHS compliance across campuses requires consistent training and monitoring, with different regional facility conditions adding complexity.</p>
+    <p>Practical vocational training involves high-risk activities (e.g., trade workshops), requiring strict adherence to safety protocols and equipment maintenance.</p>
+    <p>Emergency preparedness for regional campuses, including bushfire plans and evacuation procedures, is essential to ensure student and staff safety.</p>
+    <p>Cybersecurity is part of the broader safety framework, protecting student data and online learning platforms used in regional delivery.</p>
+    <table>
+        <tr><th>Safety Concern</th><th>Impact</th></tr>
+        <tr><td>WHS training needs</td><td>Compliance assurance</td></tr>
+        <tr><td>Practical training risks</td><td>Student safety</td></tr>
+        <tr><td>Emergency preparedness</td><td>Incident response</td></tr>
+        <tr><td>Cybersecurity</td><td>Data protection</td></tr>
+    </table>
+
+    <!-- SECTION 6: Execution Lead -->
+    <h2>6. Execution</h2>
+    <p>Executing course schedules across multiple campuses requires coordination of staff, resources, and facilities while adapting to local enrolment fluctuations.</p>
+    <p>Procurement processes for learning materials and IT resources can be delayed by public sector budget and compliance requirements.</p>
+    <p>Regional logistics, including delivery of materials and equipment, must be timed to align with course delivery schedules and campus constraints.</p>
+    <p>Monitoring and reporting on course delivery performance and student outcomes are critical for ensuring continuous improvement across campuses.</p>
+    <table>
+        <tr><th>Execution Issue</th><th>Impact</th></tr>
+        <tr><td>Schedule coordination</td><td>Delivery consistency</td></tr>
+        <tr><td>Procurement delays</td><td>Resource shortages</td></tr>
+        <tr><td>Logistics timing</td><td>Alignment challenges</td></tr>
+        <tr><td>Performance monitoring</td><td>Quality improvement</td></tr>
+    </table>
+
+    <!-- SECTION 7: People & Culture Analyst -->
+    <h2>7. People & Culture</h2>
+    <p>Attracting and retaining skilled educators in regional areas can be challenging due to competition from metropolitan areas and lifestyle considerations.</p>
+    <p>Building a culture of innovation and continuous improvement across dispersed teams requires strong leadership and clear communication channels.</p>
+    <p>Supporting staff professional development ensures educators can deliver up-to-date, industry-relevant training across regional campuses.</p>
+    <p>Fostering student-centred values across teams aligns service delivery with TAFE NSW's mission to improve regional education outcomes.</p>
+    <table>
+        <tr><th>People & Culture Issue</th><th>Impact</th></tr>
+        <tr><td>Educator attraction & retention</td><td>Staffing challenges</td></tr>
+        <tr><td>Innovation culture</td><td>Service improvements</td></tr>
+        <tr><td>Professional development</td><td>Capability building</td></tr>
+        <tr><td>Student-centred values</td><td>Aligned delivery</td></tr>
+    </table>
+
+    <p style="font-size:small;">Map data © OpenStreetMap contributors | Scenario designed for OPS157 educational use.</p>
+</body>
+</html>
