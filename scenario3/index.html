@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MetroLink NSW - Public Infrastructure Scenario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h2 { color: #1a4d2e; margin-top: 40px; }
+        #map { height: 400px; margin-bottom: 40px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table, th, td { border: 1px solid #ccc; }
+        th, td { padding: 8px; text-align: left; }
+        tr:hover { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>MetroLink NSW - Public Infrastructure Scenario</h1>
+    <p>MetroLink NSW, a government transport agency, is expanding rail infrastructure in the Sydney metropolitan area. Students will analyse supply chain challenges in public infrastructure, considering funding constraints, sustainability goals, community expectations, and complex contractor networks.</p>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var map = L.map('map').setView([-33.8688, 151.2093], 6);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data © OpenStreetMap contributors'
+            }).addTo(map);
+
+            var locations = [
+                { coords: [-33.8688, 151.2093], name: "Sydney CBD (Project Focus Area)" },
+                { coords: [-33.7182, 150.3099], name: "Blue Mountains (Community Impact Zone)" },
+                { coords: [-34.4278, 150.8931], name: "Wollongong (Contractor Hub)" },
+                { coords: [-31.9535, 115.8570], name: "Rolling Stock Supplier (Perth)" },
+                { coords: [1.3521, 103.8198], name: "Rail Technology Supplier (Singapore)" },
+                { coords: [51.5074, -0.1278], name: "Design Consultancy Partner (London)" }
+            ];
+
+            locations.forEach(function(loc) {
+                L.marker(loc.coords).addTo(map).bindPopup(loc.name);
+            });
+        });
+    </script>
+
+    <!-- SECTION 1: Supply Chain Challenge Strategist -->
+    <h2>1. Challenges</h2>
+    <p>MetroLink NSW faces delays in rail infrastructure delivery due to complex approval processes involving multiple government departments, environmental assessments, and community consultations, leading to extended project timelines.</p>
+    <p>Contractor coordination issues arise with varied subcontractors for track laying, signalling systems, and civil works, creating scheduling conflicts and accountability challenges.</p>
+    <p>Budget constraints due to public funding cycles and shifting political priorities create uncertainty, affecting contractor commitments and procurement planning for key materials like steel and signalling equipment.</p>
+    <p>Community opposition and environmental protests delay construction, requiring additional stakeholder engagement and mitigation plans, impacting supply chain plans and contractor timelines.</p>
+    <table>
+        <tr><th>Challenge</th><th>Impact</th></tr>
+        <tr><td>Approval process delays</td><td>Extended timelines</td></tr>
+        <tr><td>Contractor coordination</td><td>Scheduling conflicts</td></tr>
+        <tr><td>Budget constraints</td><td>Procurement uncertainty</td></tr>
+        <tr><td>Community opposition</td><td>Project delays</td></tr>
+    </table>
+
+    <!-- SECTION 2: Supply Chain Competitive Strategist -->
+    <h2>2. Competition</h2>
+    <p>While MetroLink NSW is a public entity, it faces competition for resources such as skilled labour and materials due to concurrent infrastructure projects across NSW and Australia, driving up costs and extending lead times.</p>
+    <p>Contractors may prioritise private sector clients with higher margins, leading to delays in public infrastructure projects due to resource reallocation by suppliers and subcontractors.</p>
+    <p>Competing infrastructure projects globally can limit the availability of specialised rail technology and rolling stock, requiring MetroLink NSW to negotiate longer lead times or higher prices.</p>
+    <p>Public pressure for cost-effective service delivery adds to the challenge, with constant benchmarking against other rail projects in cities like Melbourne and Brisbane for cost, quality, and speed.</p>
+    <table>
+        <tr><th>Competitive Factor</th><th>Impact on MetroLink NSW</th></tr>
+        <tr><td>Skilled labour competition</td><td>Labour shortages</td></tr>
+        <tr><td>Contractor prioritisation</td><td>Delays in works</td></tr>
+        <tr><td>Global supply constraints</td><td>Longer lead times</td></tr>
+        <tr><td>Public benchmarking</td><td>Cost pressures</td></tr>
+    </table>
+
+    <!-- SECTION 3: Service and Quality Designer -->
+    <h2>3. Service and Quality</h2>
+    <p>MetroLink NSW aims to deliver a reliable, safe, and accessible rail service but faces quality control challenges in ensuring contractors meet design specifications and safety standards during construction.</p>
+    <p>Delays and rework often occur due to quality failures in track laying or signalling system installation, increasing costs and impacting public trust in project delivery.</p>
+    <p>Ensuring disability access and compliance with safety standards in stations and trains requires consistent supplier and contractor performance across sites, challenging in a large-scale, multi-location project.</p>
+    <p>Customer service expectations for timely delivery and transparency require clear communication strategies and progress tracking tools to manage stakeholder expectations effectively.</p>
+    <table>
+        <tr><th>Quality Issue</th><th>Impact</th></tr>
+        <tr><td>Contractor quality variability</td><td>Rework, delays</td></tr>
+        <tr><td>Signalling system faults</td><td>Operational safety risks</td></tr>
+        <tr><td>Disability access compliance</td><td>Complex monitoring</td></tr>
+        <tr><td>Stakeholder transparency</td><td>Public trust</td></tr>
+    </table>
+
+    <!-- SECTION 4: Sustainability Designer -->
+    <h2>4. Sustainability</h2>
+    <p>MetroLink NSW is committed to reducing carbon emissions through rail transport expansion but faces challenges sourcing sustainable construction materials at competitive prices.</p>
+    <p>Construction activities generate noise, dust, and environmental impacts requiring mitigation measures and additional costs to align with environmental protection regulations.</p>
+    <p>Community expectations for biodiversity protection around construction sites create additional complexities, requiring detailed environmental planning and flexible supply chain schedules to avoid sensitive periods for local fauna.</p>
+    <p>Balancing sustainability goals with project budget constraints requires prioritising sustainability initiatives that deliver the highest impact for investment while managing public and political expectations.</p>
+    <table>
+        <tr><th>Sustainability Issue</th><th>Impact</th></tr>
+        <tr><td>Cost of sustainable materials</td><td>Budget strain</td></tr>
+        <tr><td>Environmental impacts</td><td>Mitigation costs</td></tr>
+        <tr><td>Biodiversity concerns</td><td>Scheduling constraints</td></tr>
+        <tr><td>Budget vs. goals</td><td>Complex trade-offs</td></tr>
+    </table>
+
+    <!-- SECTION 5: Safety Designer -->
+    <h2>5. Safety</h2>
+    <p>Ensuring safety on construction sites with multiple contractors requires stringent WHS practices and regular safety audits across dispersed locations.</p>
+    <p>Rail infrastructure projects involve high-risk activities such as heavy lifting, working near live rail lines, and electrical installations, requiring comprehensive safety training for all personnel.</p>
+    <p>Contractor safety culture varies, necessitating MetroLink NSW’s direct involvement in safety management and the establishment of clear reporting and escalation procedures for incidents.</p>
+    <p>Public safety during construction, including safe pedestrian access and traffic management around worksites, is critical to maintaining community trust and preventing incidents.</p>
+    <table>
+        <tr><th>Safety Concern</th><th>Impact</th></tr>
+        <tr><td>Worksite WHS compliance</td><td>Injury risk mitigation</td></tr>
+        <tr><td>High-risk activities</td><td>Need for specialised training</td></tr>
+        <tr><td>Contractor safety variability</td><td>Oversight challenges</td></tr>
+        <tr><td>Public safety near worksites</td><td>Incident prevention</td></tr>
+    </table>
+
+    <!-- SECTION 6: Execution Lead -->
+    <h2>6. Execution</h2>
+    <p>MetroLink NSW faces execution challenges with aligning contractor schedules, delivery of materials, and meeting milestones set out in the project plan.</p>
+    <p>Supply chain disruptions such as steel shortages or import delays in signalling components can halt progress, requiring contingency plans and buffer strategies.</p>
+    <p>Coordination between government departments and private contractors requires clear communication protocols and regular project meetings to ensure alignment.</p>
+    <p>Weather-related disruptions add unpredictability to project timelines, requiring flexibility in planning and execution phases to minimise delays.</p>
+    <table>
+        <tr><th>Execution Issue</th><th>Impact</th></tr>
+        <tr><td>Schedule misalignment</td><td>Milestone delays</td></tr>
+        <tr><td>Supply disruptions</td><td>Project halts</td></tr>
+        <tr><td>Gov-contractor coordination</td><td>Communication challenges</td></tr>
+        <tr><td>Weather disruptions</td><td>Unpredictable delays</td></tr>
+    </table>
+
+    <!-- SECTION 7: People & Culture Analyst -->
+    <h2>7. People & Culture</h2>
+    <p>Attracting and retaining skilled project managers and engineers within the public sector can be challenging due to competition with the private sector for talent.</p>
+    <p>MetroLink NSW needs to foster a safety and quality culture across its contractor network, requiring consistent messaging and monitoring.</p>
+    <p>Stakeholder management skills are essential for engaging communities, managing expectations, and addressing concerns during construction phases.</p>
+    <p>Embedding sustainability values into everyday practices across contractors and internal teams supports MetroLink NSW’s long-term environmental goals but requires consistent leadership and accountability structures.</p>
+    <table>
+        <tr><th>People & Culture Issue</th><th>Impact</th></tr>
+        <tr><td>Talent competition</td><td>Recruitment challenges</td></tr>
+        <tr><td>Culture consistency</td><td>Quality and safety outcomes</td></tr>
+        <tr><td>Stakeholder management</td><td>Community trust</td></tr>
+        <tr><td>Sustainability values</td><td>Alignment with goals</td></tr>
+    </table>
+
+    <p style="font-size:small;">Map data © OpenStreetMap contributors | Scenario designed for OPS157 educational use.</p>
+</body>
+</html>
