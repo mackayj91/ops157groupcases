@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SolarGrid NSW - Public Infrastructure Renewable Energy Scenario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h2 { color: #1a4d2e; margin-top: 40px; }
+        #map { height: 400px; margin-bottom: 40px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table, th, td { border: 1px solid #ccc; }
+        th, td { padding: 8px; text-align: left; }
+        tr:hover { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>SolarGrid NSW - Public Infrastructure Renewable Energy Scenario</h1>
+    <p>SolarGrid NSW, a government renewable energy agency, is building a network of solar farms and integrating them into the state grid. Students will analyse supply chain management in large-scale, public renewable energy infrastructure projects under sustainability goals, community expectations, and funding constraints.</p>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var map = L.map('map').setView([-33.8688, 151.2093], 6);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data © OpenStreetMap contributors'
+            }).addTo(map);
+
+            var locations = [
+                { coords: [-33.8688, 151.2093], name: "Sydney HQ (NSW Energy Department)" },
+                { coords: [-32.9283, 151.7817], name: "Newcastle Solar Farm" },
+                { coords: [-34.4737, 150.7986], name: "Wollongong Grid Connection" },
+                { coords: [-31.2532, 146.9211], name: "Regional NSW Solar Site" },
+                { coords: [34.6937, 135.5023], name: "Inverter Supplier (Osaka, Japan)" },
+                { coords: [1.3521, 103.8198], name: "Panel Supplier (Singapore)" },
+                { coords: [51.5074, -0.1278], name: "Grid Design Consultants (London)" }
+            ];
+
+            locations.forEach(function(loc) {
+                L.marker(loc.coords).addTo(map).bindPopup(loc.name);
+            });
+        });
+    </script>
+
+    <!-- SECTION 1: Supply Chain Challenge Strategist -->
+    <h2>1. Challenges</h2>
+    <p>SolarGrid NSW faces challenges in sourcing high-quality photovoltaic panels due to global demand spikes and supply chain constraints, leading to extended lead times and higher procurement costs.</p>
+    <p>Grid integration complexities require coordination with multiple stakeholders, including network providers, local councils, and environmental agencies, leading to approval delays and added bureaucracy.</p>
+    <p>Land acquisition for solar farm development in regional NSW creates community tensions around land use, requiring stakeholder engagement and social license considerations during planning phases.</p>
+    <p>Fluctuating policy incentives for renewable energy impact project funding security, creating financial planning challenges in long-term infrastructure commitments.</p>
+    <table>
+        <tr><th>Challenge</th><th>Impact</th></tr>
+        <tr><td>Panel supply constraints</td><td>Project delays, higher costs</td></tr>
+        <tr><td>Grid integration complexity</td><td>Approval delays</td></tr>
+        <tr><td>Land acquisition issues</td><td>Community tensions</td></tr>
+        <tr><td>Policy incentive changes</td><td>Financial uncertainty</td></tr>
+    </table>
+
+    <!-- SECTION 2: Supply Chain Competitive Strategist -->
+    <h2>2. Competition</h2>
+    <p>SolarGrid NSW competes indirectly with private renewable energy developers for skilled labour, driving up project labour costs and delaying project timelines.</p>
+    <p>Global demand for solar panels and inverters creates competition for these components, requiring advanced procurement strategies and relationship management with suppliers.</p>
+    <p>Large-scale private renewable projects can secure better supplier terms due to higher purchasing volumes, challenging SolarGrid NSW's procurement leverage.</p>
+    <p>Public expectations for cost-effective energy solutions pressure SolarGrid NSW to deliver projects efficiently, benchmarking against private sector timelines and budgets.</p>
+    <table>
+        <tr><th>Competitive Factor</th><th>Impact on SolarGrid NSW</th></tr>
+        <tr><td>Labour market competition</td><td>Higher costs, delays</td></tr>
+        <tr><td>Global component demand</td><td>Supply constraints</td></tr>
+        <tr><td>Private sector leverage</td><td>Weaker procurement power</td></tr>
+        <tr><td>Cost efficiency expectations</td><td>Delivery pressure</td></tr>
+    </table>
+
+    <!-- SECTION 3: Service and Quality Designer -->
+    <h2>3. Service and Quality</h2>
+    <p>SolarGrid NSW must ensure high quality in installation to maximise energy output and grid reliability, but variability in contractor performance can lead to inconsistent build quality.</p>
+    <p>Grid connection standards must be rigorously met, requiring coordination with energy distributors and adherence to technical requirements to avoid operational disruptions.</p>
+    <p>Maintenance quality across geographically dispersed sites can vary, impacting long-term performance and increasing operational costs.</p>
+    <p>Service delivery expectations from the public and stakeholders require clear communication and transparent reporting on project progress and outcomes.</p>
+    <table>
+        <tr><th>Service/Quality Issue</th><th>Impact</th></tr>
+        <tr><td>Contractor quality variability</td><td>Inconsistent builds</td></tr>
+        <tr><td>Grid standards compliance</td><td>Operational reliability</td></tr>
+        <tr><td>Maintenance variability</td><td>Performance impacts</td></tr>
+        <tr><td>Stakeholder expectations</td><td>Public trust</td></tr>
+    </table>
+
+    <!-- SECTION 4: Sustainability Designer -->
+    <h2>4. Sustainability</h2>
+    <p>SolarGrid NSW prioritises renewable energy generation, directly reducing emissions and supporting NSW’s net-zero targets, but project materials sourcing can carry embedded carbon footprints that require mitigation strategies.</p>
+    <p>Recycling and end-of-life management for panels are critical sustainability considerations, with limited infrastructure in Australia currently available for efficient processing.</p>
+    <p>Community expectations around biodiversity protection and water use during construction require SolarGrid NSW to develop site-specific sustainability management plans.</p>
+    <p>Balancing project timelines with sustainability initiatives, such as minimising land clearing and protecting native species, can lead to extended planning and higher project costs.</p>
+    <table>
+        <tr><th>Sustainability Issue</th><th>Impact</th></tr>
+        <tr><td>Embedded material emissions</td><td>Carbon mitigation needs</td></tr>
+        <tr><td>Panel recycling limitations</td><td>End-of-life challenges</td></tr>
+        <tr><td>Biodiversity protection</td><td>Planning complexity</td></tr>
+        <tr><td>Balancing timelines & goals</td><td>Higher costs</td></tr>
+    </table>
+
+    <!-- SECTION 5: Safety Designer -->
+    <h2>5. Safety</h2>
+    <p>Solar farm construction involves high-risk activities, including working at heights and electrical installations, requiring comprehensive WHS management systems.</p>
+    <p>Contractor safety culture varies, necessitating SolarGrid NSW to conduct regular safety audits and training to maintain safety standards across sites.</p>
+    <p>Transporting panels and heavy equipment to regional sites involves logistics risks, including road safety and secure handling procedures.</p>
+    <p>Weather conditions, such as extreme heat, can create health and safety risks for workers, requiring mitigation plans to ensure safe operations.</p>
+    <table>
+        <tr><th>Safety Concern</th><th>Impact</th></tr>
+        <tr><td>High-risk activities</td><td>Worker safety risks</td></tr>
+        <tr><td>Variable safety culture</td><td>Audit & training needs</td></tr>
+        <tr><td>Transport safety</td><td>Logistics risks</td></tr>
+        <tr><td>Weather-related risks</td><td>Health & safety impacts</td></tr>
+    </table>
+
+    <!-- SECTION 6: Execution Lead -->
+    <h2>6. Execution</h2>
+    <p>Project delays can occur due to weather disruptions and supply chain bottlenecks in securing critical components like panels and inverters.</p>
+    <p>Coordinating multiple contractors across different locations requires effective communication channels and clear project management structures.</p>
+    <p>Grid connection processes can introduce additional execution delays, as technical and regulatory requirements must be met before commissioning.</p>
+    <p>Local community concerns may require adjustments to project execution, including rerouting access roads or altering construction methods to minimise disruptions.</p>
+    <table>
+        <tr><th>Execution Issue</th><th>Impact</th></tr>
+        <tr><td>Weather disruptions</td><td>Schedule delays</td></tr>
+        <tr><td>Contractor coordination</td><td>Execution complexity</td></tr>
+        <tr><td>Grid connection requirements</td><td>Delayed commissioning</td></tr>
+        <tr><td>Community concerns</td><td>Project adjustments</td></tr>
+    </table>
+
+    <!-- SECTION 7: People & Culture Analyst -->
+    <h2>7. People & Culture</h2>
+    <p>SolarGrid NSW requires a skilled workforce in project management and renewable energy systems, competing with private sector opportunities for talent.</p>
+    <p>Fostering a safety and sustainability culture across diverse contractors is critical for consistent project outcomes and public trust.</p>
+    <p>Employee training in renewable energy technologies and community engagement practices enhances SolarGrid NSW’s capabilities in delivering sustainable projects.</p>
+    <p>Aligning daily operations with sustainability values and government targets requires leadership commitment and accountability structures within SolarGrid NSW and its contractor network.</p>
+    <table>
+        <tr><th>People & Culture Issue</th><th>Impact</th></tr>
+        <tr><td>Talent competition</td><td>Recruitment challenges</td></tr>
+        <tr><td>Culture consistency</td><td>Project outcomes</td></tr>
+        <tr><td>Skills development</td><td>Capability building</td></tr>
+        <tr><td>Alignment with goals</td><td>Performance consistency</td></tr>
+    </table>
+
+    <p style="font-size:small;">Map data © OpenStreetMap contributors | Scenario designed for OPS157 educational use.</p>
+</body>
+</html>
