@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scenario Explorer: GreenWear Ethical Clothing Co.</title>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+body { font-family: sans-serif; max-width: 900px; margin: auto; padding: 20px; }
+h1, h2, h3 { color: #333; }
+.section { margin-bottom: 40px; }
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+th { background-color: #f0f0f0; }
+#map { height: 500px; margin-bottom: 40px; }
+</style>
+</head>
+<body>
+<h1>Scenario Explorer: GreenWear Ethical Clothing Co.</h1>
+<p>GreenWear is an Australian startup designing, manufacturing, and selling ethically sourced mass-produced T-shirts online. It has a globally distributed supply chain including sourcing, manufacturing, warehousing, and key customer markets in Australia, Asia, Europe, and North America.</p>
+<div id="map"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var map = L.map('map').setView([10, 100], 2);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
+  L.marker([-33.8688, 151.2093]).addTo(map).bindPopup('Sydney, Australia: HQ and Distribution Centre').openPopup();
+  L.marker([-37.8136, 144.9631]).addTo(map).bindPopup('Melbourne, Australia: Domestic Warehousing');
+  L.marker([21.0285, 105.8542]).addTo(map).bindPopup('Hanoi, Vietnam: Cotton Sourcing');
+  L.marker([23.8859, 45.0792]).addTo(map).bindPopup('Riyadh, Saudi Arabia: Organic Cotton Export Hub');
+  L.marker([23.685, 90.3563]).addTo(map).bindPopup('Dhaka, Bangladesh: Manufacturing Facility');
+  L.marker([13.7563, 100.5018]).addTo(map).bindPopup('Bangkok, Thailand: Secondary Manufacturing Partner');
+  L.marker([35.6895, 139.6917]).addTo(map).bindPopup('Tokyo, Japan: Regional Distribution Hub');
+  L.marker([55.7558, 37.6173]).addTo(map).bindPopup('Moscow, Russia: Eastern European Logistics Hub');
+  L.marker([37.7749, -122.4194]).addTo(map).bindPopup('San Francisco, USA: Key Market');
+  L.marker([40.7128, -74.0060]).addTo(map).bindPopup('New York, USA: Retail and E-commerce Market');
+  L.marker([51.5074, -0.1278]).addTo(map).bindPopup('London, UK: Key European Market');
+  L.marker([48.8566, 2.3522]).addTo(map).bindPopup('Paris, France: EU Distribution Centre');
+});
+</script>
+
+<p>The interactive map above shows GreenWear’s realistic global supply chain touchpoints, helping students visualise logistics complexity and regional risk factors for analysis.</p>
+
+<!-- SECTION 1: Supply Chain Challenge Strategist -->
+<div class="section">
+<h2>1. Supply Chain Challenge Strategist</h2>
+<p>GreenWear faces ongoing challenges with demand forecasting, resulting in frequent mismatches between production and customer demand. This issue is compounded by seasonality in the apparel market and the unpredictability of fast-fashion trends, leading to excess inventory of some lines while others stock out quickly. The lack of integrated forecasting tools and real-time data visibility makes it difficult to respond effectively to demand shifts.</p>
+<p>Supplier concentration is a critical risk for GreenWear, with the majority of production tied to a limited number of manufacturers in Bangladesh and Vietnam. Any disruption in these locations due to political unrest, climate events, or pandemic-related shutdowns could halt production entirely. The absence of diversified sourcing strategies increases the vulnerability of the entire supply chain.</p>
+<p>Logistics inconsistencies also pose significant challenges. Lead times fluctuate due to customs delays, limited shipping options, and port congestion, affecting GreenWear’s ability to promise reliable delivery windows to customers. These delays contribute to negative customer experiences and additional costs related to expedited shipping when issues arise.</p>
+<p>GreenWear currently lacks a comprehensive supply chain risk management plan, relying instead on ad-hoc solutions when problems occur. Developing resilience requires investments in supplier diversification, scenario planning, and collaborative relationships with logistics partners to mitigate the impacts of disruptions and improve operational agility.</p>
+<table>
+<tr><th>Challenge</th><th>Status</th><th>Impact</th></tr>
+<tr><td>Forecast Accuracy</td><td>Low</td><td>Stockouts/Excess Inventory</td></tr>
+<tr><td>Supplier Diversification</td><td>Poor</td><td>High Disruption Risk</td></tr>
+<tr><td>Logistics Consistency</td><td>Variable</td><td>Customer Delays</td></tr>
+</table>
+</div>
+
+<!-- SECTION 2: Supply Chain Competitive Strategist -->
+<div class="section">
+<h2>2. Supply Chain Competitive Strategist</h2>
+<p>GreenWear’s competitive positioning is challenged by fast fashion competitors that deliver at lower prices and with faster turnaround times. The company’s ethical stance necessitates higher sourcing and manufacturing costs, which reduce price competitiveness in mass markets. This conflict between ethical practices and affordability limits GreenWear’s scalability in competitive environments.</p>
+<p>Product design cycles at GreenWear are slower due to small-batch ethical sourcing and supplier limitations, resulting in missed trend windows. Fast-moving competitors can capture market share by quickly introducing new styles, while GreenWear’s offerings can feel outdated upon arrival in-market. This affects the brand’s relevance, especially among younger, trend-driven customers.</p>
+<p>Marketing constraints further weaken competitiveness. GreenWear’s smaller budgets limit its reach, and the brand’s reliance on organic growth reduces visibility compared to large brands with aggressive digital marketing strategies. This challenge is compounded by inconsistent product availability, which weakens campaign effectiveness.</p>
+<p>To strengthen competitiveness, GreenWear needs supplier collaboration for faster development cycles, targeted marketing investment, and supply chain innovations to reduce cost without compromising sustainability. These strategies will improve the brand’s ability to respond to market shifts while maintaining its ethical commitments.</p>
+<table>
+<tr><th>Factor</th><th>Current</th><th>Target</th></tr>
+<tr><td>Speed to Market</td><td>Slow</td><td>Fast</td></tr>
+<tr><td>Price Positioning</td><td>Premium</td><td>Competitive</td></tr>
+<tr><td>Trend Responsiveness</td><td>Low</td><td>High</td></tr>
+</table>
+</div>
+
+<!-- SECTION 3: Service and Quality Designer -->
+<div class="section">
+<h2>3. Service and Quality Designer</h2>
+<p>GreenWear faces issues with service delivery and quality control across its supply chain. Frequent delays from supplier production and customs clearance mean customers experience late deliveries, which reduces satisfaction and discourages repeat business. The variability in delivery times complicates inventory management and impacts marketing campaigns tied to product launches.</p>
+<p>Quality issues such as inconsistent sizing, stitching flaws, and colour variations are frequent, stemming from supplier capability gaps and the lack of a robust quality assurance program. These issues increase return rates and negatively impact GreenWear’s reputation for reliable, high-quality ethical products.</p>
+<p>Customer service is reactive, with slow response times and a lack of systematic issue tracking. This undermines customer trust, as issues are not resolved promptly or proactively. Customers who value GreenWear’s mission may still choose competitors if they perceive service experiences as inadequate.</p>
+<p>To improve, GreenWear should implement pre-shipment inspections, supplier quality training, and CRM systems to track and address customer issues efficiently. Establishing clear quality and service KPIs will align operations with brand promises and increase customer satisfaction.</p>
+<table>
+<tr><th>Metric</th><th>Current</th><th>Target</th></tr>
+<tr><td>On-Time Delivery</td><td>68%</td><td>95%</td></tr>
+<tr><td>Defect-Free Rate</td><td>82%</td><td>98%</td></tr>
+<tr><td>Customer Satisfaction</td><td>60%</td><td>90%</td></tr>
+</table>
+</div>
+
+<!-- SECTION 4: Sustainability Designer -->
+<div class="section">
+<h2>4. Sustainability Designer</h2>
+<p>GreenWear has set ambitious sustainability goals but struggles with supply chain alignment. While the company aims to use 100% organic cotton, current usage remains around 40% due to supplier limitations and higher costs. This reduces the company’s ability to meet its brand promise to environmentally conscious customers.</p>
+<p>Manufacturing in regions with high water and energy use further challenges GreenWear’s commitment to reducing its environmental footprint. Suppliers often lack the systems to measure and report environmental impacts, limiting GreenWear’s ability to track progress and identify improvement areas.</p>
+<p>Packaging remains an improvement area, with only partial use of recycled materials and limited supplier options for biodegradable packaging. This misalignment with customer expectations can weaken the perceived authenticity of GreenWear’s brand positioning.</p>
+<p>GreenWear should invest in supplier partnerships focused on sustainable practices, traceability technology, and pilot projects for sustainable materials and processes to move towards its sustainability targets while maintaining operational feasibility.</p>
+<table>
+<tr><th>Indicator</th><th>Current</th><th>Target</th></tr>
+<tr><td>Organic Cotton Usage</td><td>40%</td><td>100%</td></tr>
+<tr><td>Water Usage per Garment</td><td>80L</td><td>40L</td></tr>
+<tr><td>CO₂e per Garment</td><td>2.5kg</td><td>1.5kg</td></tr>
+</table>
+</div>
+
+<!-- SECTION 5: Safety Designer -->
+<div class="section">
+<h2>5. Safety Designer</h2>
+<p>Safety in GreenWear’s supply chain is inconsistent, with gaps in supplier compliance on protective equipment and fire safety standards. Limited investment in safety infrastructure by suppliers increases risks for workers and exposes GreenWear to reputational harm.</p>
+<p>GreenWear’s ability to enforce safety standards is limited by its bargaining power, and supplier reluctance to adopt improvements due to cost pressures. Audits reveal recurring issues without effective remediation plans, indicating the need for systematic safety management processes.</p>
+<p>Internally, GreenWear’s distribution and warehousing sites have outdated safety training and unclear incident reporting processes. Minor incidents are underreported, preventing trend analysis and proactive mitigation.</p>
+<p>GreenWear should enforce clear safety standards in contracts, support suppliers in safety upgrades, and improve internal safety culture through training and transparent reporting structures aligned with its ethical mission.</p>
+<table>
+<tr><th>Safety KPI</th><th>Current</th><th>Target</th></tr>
+<tr><td>Supplier Safety Compliance</td><td>60%</td><td>100%</td></tr>
+<tr><td>Internal Training Coverage</td><td>40%</td><td>100%</td></tr>
+<tr><td>Incidents per Quarter</td><td>5</td><td>0</td></tr>
+</table>
+</div>
+
+<!-- SECTION 6: Execution Lead -->
+<div class="section">
+<h2>6. Execution Lead</h2>
+<p>GreenWear’s execution challenges stem from fragmented systems, resulting in coordination issues between suppliers, logistics partners, and internal teams. This causes frequent shipment delays and missed customer commitments, impacting customer trust and brand perception.</p>
+<p>Poor demand forecasting and production planning lead to stock imbalances, with some products overstocked while popular items run out. This ties up working capital and reduces flexibility, hindering the company’s ability to respond to market changes.</p>
+<p>Logistics inefficiencies, including customs and shipping delays, increase operational costs and complicate delivery timelines. The lack of integrated tracking systems limits visibility, making it difficult to proactively manage issues or inform customers of delays.</p>
+<p>GreenWear should invest in digital supply chain platforms, collaborative planning with suppliers, and warehouse optimisation to improve execution, reduce waste, and enhance customer satisfaction aligned with the brand’s promise.</p>
+<table>
+<tr><th>Execution Metric</th><th>Current</th><th>Target</th></tr>
+<tr><td>Average Lead Time</td><td>30 days</td><td>14 days</td></tr>
+<tr><td>On-Time Shipment Rate</td><td>65%</td><td>95%</td></tr>
+<tr><td>Stockout Events</td><td>6 per quarter</td><td>0</td></tr>
+</table>
+</div>
+
+<!-- SECTION 7: People & Culture Analyst -->
+<div class="section">
+<h2>7. People & Culture Analyst</h2>
+<p>GreenWear’s commitment to ethical values is challenged internally by high staff turnover, particularly in warehousing and customer service. This instability disrupts workflows, increases costs, and reduces service quality, impacting customer satisfaction.</p>
+<p>Employees report unclear career development opportunities and limited recognition, leading to reduced motivation and productivity. This disconnect between the company’s external values and internal practices affects employee engagement and retention.</p>
+<p>Training investment is insufficient, limiting employee capabilities to adopt new processes or technology that could improve operational efficiency. Without upskilling, staff cannot contribute effectively to continuous improvement initiatives.</p>
+<p>GreenWear should prioritise clear career progression frameworks, employee recognition programs, and increased training investment to align its internal culture with its ethical branding and operational needs.</p>
+<table>
+<tr><th>People Metric</th><th>Current</th><th>Target</th></tr>
+<tr><td>Staff Turnover</td><td>28%</td><td>10%</td></tr>
+<tr><td>Training Investment</td><td>$150/employee</td><td>$750/employee</td></tr>
+<tr><td>Engagement Score</td><td>55%</td><td>85%</td></tr>
+</table>
+</div>
+
+</body>
+</html>
