@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RiverHealth NSW - Regional Healthcare Scenario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h2 { color: #1a4d2e; margin-top: 40px; }
+        #map { height: 400px; margin-bottom: 40px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table, th, td { border: 1px solid #ccc; }
+        th, td { padding: 8px; text-align: left; }
+        tr:hover { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>RiverHealth NSW - Regional Healthcare Scenario</h1>
+    <p>RiverHealth NSW operates hospitals and clinics across regional NSW, providing essential healthcare services while managing supply chain, workforce, and sustainability challenges under public funding constraints. Students will analyse how regional healthcare services manage supply chain complexities, service quality, and sustainability goals.</p>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var map = L.map('map').setView([-33.8688, 151.2093], 6);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data © OpenStreetMap contributors'
+            }).addTo(map);
+
+            var locations = [
+                { coords: [-33.8688, 151.2093], name: "Sydney HQ (NSW Health)" },
+                { coords: [-35.1264, 147.3599], name: "Wagga Wagga Base Hospital" },
+                { coords: [-32.2429, 148.6048], name: "Dubbo Hospital" },
+                { coords: [-31.9535, 115.8570], name: "Medical Equipment Supplier (Perth)" },
+                { coords: [34.6937, 135.5023], name: "Pharmaceutical Supplier (Osaka, Japan)" },
+                { coords: [1.3521, 103.8198], name: "IT Systems Support (Singapore)" }
+            ];
+
+            locations.forEach(function(loc) {
+                L.marker(loc.coords).addTo(map).bindPopup(loc.name);
+            });
+        });
+    </script>
+
+    <!-- SECTION 1: Supply Chain Challenge Strategist -->
+    <h2>1. Challenges</h2>
+    <p>RiverHealth NSW faces challenges in sourcing and delivering critical medical supplies to regional hospitals due to long lead times, limited transport options, and supplier delays.</p>
+    <p>Fluctuations in demand for healthcare services, especially during flu seasons or local health crises, strain inventory management and resource allocation.</p>
+    <p>Limited local suppliers for specialised medical equipment result in dependence on interstate or overseas suppliers, increasing lead times and costs.</p>
+    <p>Budget constraints under public funding limit flexibility in expanding supply contracts or investing in advanced supply chain technologies.</p>
+    <table>
+        <tr><th>Challenge</th><th>Impact</th></tr>
+        <tr><td>Transport & lead times</td><td>Delayed supplies</td></tr>
+        <tr><td>Demand fluctuations</td><td>Strained resources</td></tr>
+        <tr><td>Supplier limitations</td><td>High costs</td></tr>
+        <tr><td>Budget constraints</td><td>Limited flexibility</td></tr>
+    </table>
+
+    <!-- SECTION 2: Supply Chain Competitive Strategist -->
+    <h2>2. Competition</h2>
+    <p>RiverHealth NSW competes with metropolitan hospitals for medical staff, impacting its ability to attract and retain skilled professionals in regional areas.</p>
+    <p>Private healthcare providers in regional centres may secure faster access to critical supplies due to different procurement processes and supplier prioritisation.</p>
+    <p>Global competition for medical equipment and pharmaceuticals can lead to shortages or delayed deliveries, impacting service delivery at regional facilities.</p>
+    <p>Community expectations for high-quality, timely healthcare services place pressure on RiverHealth NSW to maintain consistent service levels despite supply chain challenges.</p>
+    <table>
+        <tr><th>Competitive Factor</th><th>Impact on RiverHealth NSW</th></tr>
+        <tr><td>Workforce competition</td><td>Recruitment challenges</td></tr>
+        <tr><td>Supplier prioritisation</td><td>Delayed supplies</td></tr>
+        <tr><td>Global supply competition</td><td>Shortages</td></tr>
+        <tr><td>Community expectations</td><td>Service delivery pressure</td></tr>
+    </table>
+
+    <!-- SECTION 3: Service and Quality Designer -->
+    <h2>3. Service and Quality</h2>
+    <p>Maintaining high standards of patient care requires reliable delivery of medical supplies and equipment, but variability in supplier performance impacts service quality.</p>
+    <p>Limited local diagnostic and treatment facilities increase the complexity of providing consistent healthcare services across remote areas.</p>
+    <p>Patient transport challenges due to distance and infrastructure limitations affect timely access to specialised care, impacting service quality metrics.</p>
+    <p>Communication and IT system limitations in some regions affect service delivery coordination and real-time patient data sharing across facilities.</p>
+    <table>
+        <tr><th>Service/Quality Issue</th><th>Impact</th></tr>
+        <tr><td>Supplier performance variability</td><td>Inconsistent care</td></tr>
+        <tr><td>Limited local facilities</td><td>Service complexity</td></tr>
+        <tr><td>Transport challenges</td><td>Access delays</td></tr>
+        <tr><td>IT limitations</td><td>Coordination issues</td></tr>
+    </table>
+
+    <!-- SECTION 4: Sustainability Designer -->
+    <h2>4. Sustainability</h2>
+    <p>RiverHealth NSW aims to reduce its environmental footprint by minimising single-use plastics and implementing energy-efficient practices in its facilities.</p>
+    <p>Transport emissions from delivering supplies to remote areas challenge sustainability goals, requiring exploration of alternative logistics strategies.</p>
+    <p>Waste management and medical waste disposal in regional areas require careful compliance with environmental regulations while managing costs.</p>
+    <p>Balancing sustainability goals with urgent healthcare delivery needs during crises can create tensions in prioritisation and decision-making.</p>
+    <table>
+        <tr><th>Sustainability Issue</th><th>Impact</th></tr>
+        <tr><td>Single-use plastic reduction</td><td>Supply sourcing impacts</td></tr>
+        <tr><td>Transport emissions</td><td>Environmental footprint</td></tr>
+        <tr><td>Waste management</td><td>Compliance costs</td></tr>
+        <tr><td>Urgency vs. sustainability</td><td>Goal conflicts</td></tr>
+    </table>
+
+    <!-- SECTION 5: Safety Designer -->
+    <h2>5. Safety</h2>
+    <p>Ensuring safe delivery and storage of pharmaceuticals and medical equipment across regional facilities is critical for patient safety.</p>
+    <p>Occupational health and safety practices must be maintained across dispersed facilities, requiring consistent training and monitoring.</p>
+    <p>Transport safety for staff and patients, especially on long-distance routes, requires careful planning to mitigate risks.</p>
+    <p>Emergency preparedness in regional facilities is essential to respond effectively to local crises and natural disasters.</p>
+    <table>
+        <tr><th>Safety Concern</th><th>Impact</th></tr>
+        <tr><td>Safe supply handling</td><td>Patient safety</td></tr>
+        <tr><td>OHS consistency</td><td>Workforce safety</td></tr>
+        <tr><td>Transport safety</td><td>Incident prevention</td></tr>
+        <tr><td>Emergency preparedness</td><td>Crisis response</td></tr>
+    </table>
+
+    <!-- SECTION 6: Execution Lead -->
+    <h2>6. Execution</h2>
+    <p>Executing supply chain plans in regional healthcare requires coordination with multiple suppliers and internal departments to align delivery schedules with patient needs.</p>
+    <p>Delays in procurement processes due to budget approvals and compliance checks can slow down critical supply acquisition.</p>
+    <p>Logistical challenges in last-mile delivery to remote facilities require creative solutions and partnerships with local providers.</p>
+    <p>Monitoring and reporting of service delivery metrics are essential to track performance and identify areas for improvement in execution.</p>
+    <table>
+        <tr><th>Execution Issue</th><th>Impact</th></tr>
+        <tr><td>Coordination complexity</td><td>Schedule misalignment</td></tr>
+        <tr><td>Procurement delays</td><td>Supply shortages</td></tr>
+        <tr><td>Logistics challenges</td><td>Delivery delays</td></tr>
+        <tr><td>Monitoring gaps</td><td>Performance issues</td></tr>
+    </table>
+
+    <!-- SECTION 7: People & Culture Analyst -->
+    <h2>7. People & Culture</h2>
+    <p>Attracting and retaining healthcare professionals in regional areas is a persistent challenge due to competition with metropolitan centres and lifestyle considerations.</p>
+    <p>Fostering a culture of continuous improvement and patient-centred care across regional facilities requires leadership engagement and support.</p>
+    <p>Providing staff with training opportunities in new medical technologies and systems builds capacity and improves service delivery quality.</p>
+    <p>Aligning operational practices with patient-centred values enhances trust and satisfaction among the regional communities served by RiverHealth NSW.</p>
+    <table>
+        <tr><th>People & Culture Issue</th><th>Impact</th></tr>
+        <tr><td>Workforce attraction & retention</td><td>Staffing challenges</td></tr>
+        <tr><td>Continuous improvement culture</td><td>Service quality</td></tr>
+        <tr><td>Skills development</td><td>Capability building</td></tr>
+        <tr><td>Patient-centred practices</td><td>Community trust</td></tr>
+    </table>
+
+    <p style="font-size:small;">Map data © OpenStreetMap contributors | Scenario designed for OPS157 educational use.</p>
+</body>
+</html>
